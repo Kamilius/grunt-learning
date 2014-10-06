@@ -1,0 +1,31 @@
+@import colors
+@import box-shadow
+
+.slide
+	background-repeat: repeat 
+	background-position: 50% 0
+	background-attachment: fixed
+	min-height: 1000px
+	width: 100%
+	margin: 0 auto
+	max-width: 1920px
+	position: relative
+	+box-shadow(0 0 50px black)
+#slide1
+	background-image: url(../images/slide1.jpg)
+#slide2
+	background-image: url(../images/slide2.jpg)
+#slide3
+	background-image: url(../images/slide3.jpg)
+#slide4
+	background-image: url(../images/slide4.jpg)
+article
+	height: 458px
+	position: absolute
+	text-align: center
+	top: 150px
+	width: 100%
+	font-size: 80px
+	color: $white
+	-webkit-text-shadow: 0 0 20px black
+	text-shadow: 0 0 20px black

@@ -1,0 +1,17 @@
+!!! 5
+%html
+	%head
+		%meta{:charset => "UTF-8"}
+		%title Parallax effect
+		%link{:href => 'styles/grunt-tutorial.css', :rel => 'stylesheet'}
+	%body
+		%section.slide#slide1{:'data-type' => 'background', :'data-speed' => '10'}
+			%article Simple parallax scrolling is...
+		%section.slide#slide2{:'data-type' => 'background', :'data-speed' => '10'}
+			%article Something new...
+		%section.slide#slide3{:'data-type' => 'background', :'data-speed' => '10'}
+			%article Something beautiful...
+		%section.slide#slide4{:'data-type' => 'background', :'data-speed' => '10'}
+			%article Something nearly perfect
+		%script{:type => 'text/javascript', :src => 'https://code.jquery.com/jquery-2.1.1.min.js'}
+		%script{:type => 'text/javascript', :src => 'scripts/grunt-tutorial.min.js'}

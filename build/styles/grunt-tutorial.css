@@ -1,0 +1,47 @@
+/*! grunt-tutorial 2014-10-06 */
+/* line 4, ../../src/styles/style.sass */
+.slide {
+  background-repeat: repeat;
+  background-position: 50% 0;
+  background-attachment: fixed;
+  min-height: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  position: relative;
+  -webkit-box-shadow: 0 0 50px black;
+  box-shadow: 0 0 50px black;
+}
+
+/* line 14, ../../src/styles/style.sass */
+#slide1 {
+  background-image: url(../images/slide1.jpg);
+}
+
+/* line 16, ../../src/styles/style.sass */
+#slide2 {
+  background-image: url(../images/slide2.jpg);
+}
+
+/* line 18, ../../src/styles/style.sass */
+#slide3 {
+  background-image: url(../images/slide3.jpg);
+}
+
+/* line 20, ../../src/styles/style.sass */
+#slide4 {
+  background-image: url(../images/slide4.jpg);
+}
+
+/* line 22, ../../src/styles/style.sass */
+article {
+  height: 458px;
+  position: absolute;
+  text-align: center;
+  top: 150px;
+  width: 100%;
+  font-size: 80px;
+  color: white;
+  -webkit-text-shadow: 0 0 20px black;
+  text-shadow: 0 0 20px black;
+}
