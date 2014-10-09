@@ -3,13 +3,13 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-				compress: false,
-				beautify: true
+				banner: '/*! Parallax example <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+				compress: true//,
+				//beautify: true
 			},
 			my_target: {
 				files: {
-					'build/scripts/<%= pkg.name %>.min.js': ['src/scripts/*.js']
+					'build/scripts/main.min.js': ['src/scripts/jquery-2.1.1.min.js', 'src/scripts/script.js']
 				}
 			}
 		},
@@ -32,10 +32,10 @@ module.exports = function(grunt) {
 					//style: 'compressed',
 					style: 'expanded',
 					lineNumbers: true,
-					banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */'
+					banner: '/*! Parallax example <%= grunt.template.today("yyyy-mm-dd") %> */'
 				},
 				files: {
-					'build/styles/<%= pkg.name %>.css': 'src/styles/style.sass'
+					'build/styles/style.css': 'src/styles/style.sass'
 				}
 			}
 		},
@@ -61,4 +61,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['uglify', 'sass', 'haml']);
 };

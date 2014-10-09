@@ -1,8 +1,8 @@
 function elementInViewport(el) {
-  var top = el.offsetTop;
-  var left = el.offsetLeft;
-  var width = el.offsetWidth;
-  var height = el.offsetHeight;
+  var top = el.offsetTop,
+      left = el.offsetLeft,
+      width = el.offsetWidth,
+      height = el.offsetHeight;
 
   while(el.offsetParent) {
     el = el.offsetParent;
@@ -21,7 +21,7 @@ function elementInViewport(el) {
 $(document).ready(function() {
   var $window = $(window);
 
-  $('.slide').each(function($section) {
+  $('.slide').each(function() {
     var $bgobj = $(this);
     $(window).scroll(function() {
 
