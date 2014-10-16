@@ -1,11 +1,21 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		coffee: {
+			dist: {
+				options: {
+					bare: true
+				},
+				files: {
+					'src/scripts/script.js': 'src/scripts/script.coffee'
+				}
+			}
+		},
 		uglify: {
 			options: {
 				banner: '/*! Parallax example <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-				compress: true//,
-				//beautify: true
+				//compress: true//,
+				beautify: true
 			},
 			my_target: {
 				files: {
@@ -49,17 +59,18 @@ module.exports = function(grunt) {
 				tasks: 'haml'
 			},
 			scripts: {
-				files: ['src/scripts/*.js'],
-				tasks: 'uglify'
+				files: ['src/scripts/*.coffee'],
+				tasks: ['coffee', 'uglify']
 			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-haml');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['uglify', 'sass', 'haml']);
+	grunt.registerTask('build', ['coffee', 'uglify', 'sass', 'haml']);
 };
